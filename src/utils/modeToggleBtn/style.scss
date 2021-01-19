@@ -1,0 +1,33 @@
+.EditBtn{
+    background-image: url('./edit.svg');
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    outline: none;
+    border: none;
+
+    &:hover{
+        transition: ease-in-out 0.3s;
+        transform: scale(1.2);
+    }
+}
+
+.ConfirmBtn{
+    background-image: url('./confirm.svg');
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    outline: none;
+    border: none;
+
+    &:hover{
+        transition: ease-in-out 0.3s;
+        transform: scale(1.2);
+    }
+}

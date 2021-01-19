@@ -1,0 +1,23 @@
+$primary-color: darkblue;
+
+.Contact{
+
+    h2{
+        color: $primary-color;
+    }
+
+    label{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input{
+        min-width: 12rem;
+        max-width: 12rem;
+    }
+
+    div{
+        display: flex;
+        gap: 1rem;
+    }
+}
