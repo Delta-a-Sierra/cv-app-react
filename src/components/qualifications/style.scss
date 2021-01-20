@@ -1,0 +1,51 @@
+$primary-color: darkblue;
+
+.Qualifications{
+    h2{
+        color: $primary-color;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+    }
+
+    div{
+        display: flex;
+        gap: 1rem;
+    }
+
+    button{
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    .rg-btn{
+        padding: 0.2rem;
+        width: 10rem;
+        height: 2rem;
+    }
+}
+
+
+div .Qualification{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.Qualification{
+
+    margin-bottom: 2rem;
+
+    .bold{
+        font-weight: bold;
+    }
+
+    label{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input{
+        min-width: 12rem;
+        max-width: 12rem;
+    }
+}

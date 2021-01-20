@@ -1,4 +1,4 @@
-import react, {Component} from 'react'
+import React, {Component} from 'react'
 import './style.scss'
 import ModeToggleBtn from '../../utils/modeToggleBtn/ModeToggleBtn'
 
