@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import "./style.scss"
 import Qualification from './Qualification'
-import ModeToggleBtn from '../../utils/modeToggleBtn/ModeToggleBtn'
+import Title from '../../utils/title/Title'
 import uuid from 'react-uuid'
+import RegularButton from '../../utils/regularButton/RegularButton'
 
 
 
@@ -54,12 +55,9 @@ class Qualifications extends Component{
 
         return(
             <div className="Qualifications">
-                <div>
-                    <h2>Qualifications</h2>
-                    <ModeToggleBtn changeMode={this.changeMode} mode={this.state.mode}/>
-                </div>
+                <Title mode={this.state.mode} changeMode={this.changeMode} titleText="Qualifications"/>
                 {qualifications}
-                <button className="rg-btn" onClick={this.addQualification}>New Qualification</button>
+                <RegularButton className="rg-btn" onClick={this.addQualification} text='New Qualification' />
             </div>
 
         )

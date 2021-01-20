@@ -1,7 +1,8 @@
 import './App.scss';
-import Title from './components/title/Title'
+import Header from './components/header/Header'
 import Contact from './components/contact/Contact'
 import Qualifications from './components/qualifications/Qualifications'
+import Achievements from './components/achievments/Achievements'
 
 function App() {
   return (
@@ -12,11 +13,12 @@ function App() {
       <div className="CvBody">
         <div className="banner"></div>
         <div className="bodyInner" >
-          <Title />
+          <Header />
           <div className="contentSplit">
             <div className="side">
               <Contact />
               <Qualifications />
+              <Achievements />
 
             </div>
             <div className="main">

@@ -2,11 +2,6 @@ $primary-color: darkblue;
 
 .Contact{
 
-    h2{
-        color: $primary-color;
-        font-size: 1.1rem;
-    }
-
     button{
         width: 1.4rem;
         height: 1.4rem;
@@ -20,10 +15,5 @@ $primary-color: darkblue;
     input{
         min-width: 12rem;
         max-width: 12rem;
-    }
-
-    div{
-        display: flex;
-        gap: 1rem;
     }
 }

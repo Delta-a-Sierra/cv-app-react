@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import "./style.scss"
+import RegularButton from '../../utils/regularButton/RegularButton'
 
 
 class Qualification extends Component{
@@ -51,7 +52,7 @@ class Qualification extends Component{
                     Qualification
                     <input type="text" className="bold" value={qualification} onChange={this.changeQualification}></input>
                 </label>
-                <button className="rg-btn" onClick={() => this.props.deleteEntry(this.state.key)}>delete</button>
+                <RegularButton className="rg-btn" onClick={() => this.props.deleteEntry(this.state.key)} text='Delete' />
 
             </div>
         )

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './style.scss'
-import ModeToggleBtn from '../../utils/modeToggleBtn/ModeToggleBtn'
+import Title from '../../utils/title/Title'
 
 class Contact extends Component{
     constructor(props){
@@ -36,10 +36,7 @@ class Contact extends Component{
         if(mode === 'preview'){
             return(
                 <div className="Contact">
-                <div>
-                    <h2>Contact</h2>
-                    <ModeToggleBtn changeMode={this.changeMode} mode={mode}/>
-                </div>
+                    <Title mode={mode} changeMode={this.changeMode} titleText="Contact"/>   
                     <p>{number}</p>
                     <p>{email}</p>
                     <p>{street}</p>
@@ -51,10 +48,7 @@ class Contact extends Component{
         }
         return(
             <div className="Contact">
-                <div>
-                    <h2>Contact</h2>
-                    <ModeToggleBtn changeMode={this.changeMode} mode={mode}/>
-                </div>
+                <Title mode={mode} changeMode={this.changeMode} titleText="Contact"/>
                 <label> Number
                 <input type="text" value={number}></input>
                 </label>

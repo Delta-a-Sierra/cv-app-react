@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './style.scss'
 import ModeToggleBtn from '../../utils/modeToggleBtn/ModeToggleBtn'
 
-class Title extends Component{
+class Header extends Component{
     constructor(props){
         super(props)
 
@@ -65,4 +65,4 @@ class Title extends Component{
     }
 }
 
-export default Title
+export default Header
