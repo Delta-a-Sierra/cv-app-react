@@ -3,6 +3,7 @@ import Header from './components/header/Header'
 import Contact from './components/contact/Contact'
 import Qualifications from './components/qualifications/Qualifications'
 import Achievements from './components/achievments/Achievements'
+import Skills from './components/skills/Skill'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Contact />
               <Qualifications />
               <Achievements />
+              <Skills />
 
             </div>
             <div className="main">

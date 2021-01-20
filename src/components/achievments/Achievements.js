@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Title from '../../utils/title/Title'
-import Achievement from './Achievement'
+import ListItem from '../../utils/listItem/ListItem'
 import uuid from 'react-uuid'
 import RegularButton from '../../utils/regularButton/RegularButton'
 import './style.scss'
@@ -48,7 +48,7 @@ class Achievements extends Component{
 
     render(){
 
-        const achievementLIs = this.state.achievements.map((achievement) => <Achievement key={achievement.key} mode={this.state.mode}
+        const achievementLIs = this.state.achievements.map((achievement) => <ListItem key={achievement.key} mode={this.state.mode}
          value={achievement.value} onDelete={() => this.deleteAchievement(achievement.key)}/>)
 
         return(
