@@ -1,9 +1,7 @@
 import './App.scss';
 import Header from './components/header/Header'
-import Contact from './components/contact/Contact'
-import Qualifications from './components/qualifications/Qualifications'
-import Achievements from './components/achievments/Achievements'
-import Skills from './components/skills/Skill'
+import MainPanel from './components/mainPanel/MainPanel';
+import SidePanel from './components/sidePanel/SidePanel'
 
 function App() {
   return (
@@ -16,16 +14,8 @@ function App() {
         <div className="bodyInner" >
           <Header />
           <div className="contentSplit">
-            <div className="side">
-              <Contact />
-              <Qualifications />
-              <Achievements />
-              <Skills />
-
-            </div>
-            <div className="main">
-    
-            </div>
+              <SidePanel />
+              <MainPanel />
           </div>
 
         </div>
