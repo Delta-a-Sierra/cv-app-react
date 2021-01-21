@@ -1,4 +1,4 @@
-import React, {Component, component} from 'react'
+import React, {Component} from 'react'
 import './style.scss'
 import Title from '../../utils/title/Title'
 

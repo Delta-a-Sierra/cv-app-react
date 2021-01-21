@@ -1,4 +1,8 @@
 .main{
     padding-left: 4rem;
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
