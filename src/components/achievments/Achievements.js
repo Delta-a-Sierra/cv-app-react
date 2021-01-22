@@ -1,66 +1,45 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import Title from '../../utils/title/Title'
 import ListItem from '../../utils/listItem/ListItem'
 import uuid from 'react-uuid'
 import RegularButton from '../../utils/regularButton/RegularButton'
 import './style.scss'
 
-class Achievements extends Component{
-    constructor(props){
-        super(props)
+const Achievements = (props) => {
 
-        this.state = {
-            mode: 'preview',
-            achievements : [{value: 'test', key: uuid()}]
-        }
+    const [mode, setMode] = useState('preview')
+    const [achievements, setAchievements] = useState([{value: 'test', key: uuid()}])
 
-        this.changeMode = this.changeMode.bind(this)
-        this.addAchievement = this.addAchievement.bind(this)
-        this.deleteAchievement = this.deleteAchievement.bind(this)
-    }
-
-
-    addAchievement(e){
+    const addAchievement = (e) => {
         e.preventDefault()
-        this.setState({
-            achievements : [...this.state.achievements, {value: 'test', key: uuid()}]
-        })
+        setAchievements([...achievements, {value: 'test', key: uuid()}])
     }
 
-    changeMode(){
-        if(this.state.mode === 'edit'){
-            this.setState({
-                mode : 'preview'
-            })
-            return
+    const changeMode = () => {
+        if(mode === 'edit'){
+            setMode('preview')
+            return null
         }
-        this.setState({
-            mode : 'edit'
-        })
+        setMode('edit')
     }
 
-    deleteAchievement = key => {
-        const newAchievements = this.state.achievements.filter(achievement => achievement.key !== key)
-        this.setState({
-            achievements : newAchievements
-        })
+    const deleteAchievement = key => {
+        const newAchievements = achievements.filter(achievement => achievement.key !== key)
+        setAchievements(newAchievements)
     }
 
-    render(){
+    const achievementLIs = achievements.map((achievement) => <ListItem key={achievement.key} mode={mode}
+    value={achievement.value} onDelete={() => deleteAchievement(achievement.key)}/>)
 
-        const achievementLIs = this.state.achievements.map((achievement) => <ListItem key={achievement.key} mode={this.state.mode}
-         value={achievement.value} onDelete={() => this.deleteAchievement(achievement.key)}/>)
-
-        return(
-            <div className="Achievements">
-                <Title mode={this.state.mode} titleText="Achievements" changeMode={this.changeMode}/>
-                <ul>
-                    {achievementLIs}
-                </ul>
-                <RegularButton onClick={this.addAchievement} text='New Achievement' />
-            </div>
-        )
-    }
+    return(
+        <div className="Achievements">
+            <Title mode={mode} titleText="Achievements" changeMode={changeMode}/>
+            <ul>
+                {achievementLIs}
+            </ul>
+            <RegularButton onClick={addAchievement} text='New Achievement' />
+        </div>
+    )
 } 
 
 export default Achievements
