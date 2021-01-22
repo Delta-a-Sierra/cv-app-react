@@ -1,65 +1,48 @@
-import React, {Component} from 'react'
+import React, {useState} from 'react'
 import './style.scss'
 import Title from '../../utils/title/Title'
 import uuid from 'react-uuid'
 import Job from './Job'
 import RegularButton from '../../utils/regularButton/RegularButton'
 
-class ProfessionalHistory extends Component{
-    constructor(props){
-        super(props)
+const ProfessionalHistory = () => {
+    this.state = {
+        mode : 'preview',
+        professionalHistory : [{jobTitle: 'JobTitle', employerName: 'Employer', startDate : '2016',
+            endDate : '2020', key : uuid()}]
+    }
 
-        this.state = {
-            mode : 'preview',
-            professionalHistory : [{jobTitle: 'JobTitle', employerName: 'Employer', startDate : '2016',
-             endDate : '2020', key : uuid()}]
+    const [mode, setMode] = useState('preview')
+    const [professionalHistory, setProfessionalHistory] = useState([{jobTitle: 'JobTitle', employerName: 'Employer',
+    startDate : '2016', endDate : '2020', key : uuid()}])
+
+    const changeMode = () => {
+        if(mode === 'edit'){
+            setMode('preview')
+            return null
         }
-
-        this.changeMode = this.changeMode.bind(this)
-        this.deleteJob = this.deleteJob.bind(this)
-        this.addJob = this.addJob.bind(this)
+        setMode('edit')
     }
 
-    changeMode(){
-        if(this.state.mode === 'edit'){
-            this.setState({
-                mode : 'preview'
-            })
-            return
-        }
-        this.setState({
-            mode : 'edit'
-        })
+    const deleteJob = (key) => {
+        const newJobs = professionalHistory.filter((job) => job.key !== key)
+        setProfessionalHistory(newJobs)
     }
 
-    deleteJob(key){
-        const newJobs = this.state.professionalHistory.filter((job) => job.key !== key)
-        console.log('deleting')
-        this.setState({
-            professionalHistory : newJobs
-        })
+    const addJob = () => {
+        setProfessionalHistory([...professionalHistory, {jobTitle: 'JobTitle', employerName: 'Employer',
+             startDate : '2016', endDate : '2020', key : uuid()}])
     }
 
-    addJob(){
-        this.setState({
-            professionalHistory : [...this.state.professionalHistory, {jobTitle: 'JobTitle', employerName: 'Employer',
-             startDate : '2016', endDate : '2020', key : uuid()}]
-        })
-    }
+    const jobs = professionalHistory.map((job) => <Job jobTitle={job.jobTitle} employerName={job.employerName}
+    startDate={job.startDate} endDate={job.endDate} key={job.key} mode={mode} onDelete={() => deleteJob(job.key)}/>)
+    return(
+        <div className="ProfessionalHistory">
+            <Title mode={mode} titleText="Professsional History" changeMode={changeMode}/>
+            {jobs}
 
-    render(){
-
-        const jobs = this.state.professionalHistory.map((job) => <Job jobTitle={job.jobTitle} employerName={job.employerName}
-        startDate={job.startDate} endDate={job.endDate} key={job.key} mode={this.state.mode} onDelete={() => this.deleteJob(job.key)}/>)
-        return(
-            <div className="ProfessionalHistory">
-                <Title mode={this.state.mode} titleText="Professsional History" changeMode={this.changeMode}/>
-                {jobs}
-
-                <RegularButton onClick={this.addJob} text='New Job'/>
-            </div>
-        )
-    }
+            <RegularButton onClick={addJob} text='New Job'/>
+        </div>
+    )
 }
-
 export default ProfessionalHistory
