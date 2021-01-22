@@ -17,7 +17,7 @@ const Job = (props) => {
         setDescriptions(newDescription)
     }
 
-    const {jobTitle, employerName, startDate, endDate} = this.props
+    const {jobTitle, employerName, startDate, endDate} = props
 
     const descriptionList = descriptions.map((description) => <ListItem key={description.key} mode={props.mode}
     value={description.value} onDelete={() => deleteDescription(description.key)}/>)

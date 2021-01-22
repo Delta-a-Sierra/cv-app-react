@@ -3,12 +3,6 @@ import './style.scss'
 import ModeToggleBtn from '../../utils/modeToggleBtn/ModeToggleBtn'
 
 const Header = () => {
-    this.state = {
-        mode : 'preview',
-        name : 'Firstname Surname',
-        jobTitle: 'Job Title'
-    }
-
     const [mode, setMode] = useState('preview')
     const [name, setName] = useState('Firstname Surname')
     const [jobTitle, setJobTitle] = useState('Job Title')
@@ -33,7 +27,7 @@ const Header = () => {
         return(
             <div className="Title">
                 <h1 className="name">{name}</h1>
-                <ModeToggleBtn mode={mode} changeMode={this.changeMode} />
+                <ModeToggleBtn mode={mode} changeMode={changeMode} />
                 <h1>{jobTitle}</h1>
             </div>
         )

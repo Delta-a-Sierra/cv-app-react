@@ -6,12 +6,6 @@ import Job from './Job'
 import RegularButton from '../../utils/regularButton/RegularButton'
 
 const ProfessionalHistory = () => {
-    this.state = {
-        mode : 'preview',
-        professionalHistory : [{jobTitle: 'JobTitle', employerName: 'Employer', startDate : '2016',
-            endDate : '2020', key : uuid()}]
-    }
-
     const [mode, setMode] = useState('preview')
     const [professionalHistory, setProfessionalHistory] = useState([{jobTitle: 'JobTitle', employerName: 'Employer',
     startDate : '2016', endDate : '2020', key : uuid()}])
